@@ -5,23 +5,29 @@ Unstructured triangular mesh used in **all four** computations
 
 | Property | Value |
 |---|---|
+| File | `scengizci_refined.xml` (legacy DOLFIN XML format) |
 | Nodes | 23,934 |
 | Triangular elements | 47,264 |
 | Domain | [0, 2] m × [0, 1] m |
 | Cylinder | radius R = 0.05 m, centered at (0.5, 0.5) m |
 | Near-wall resolution | layers of constant-thickness elements around the cylinder |
 
-The mesh is stored in FEniCS-readable XDMF/HDF5 format:
+## Loading the mesh in FEniCS
 
-- `cylinder_mesh.xdmf` / `cylinder_mesh.h5` — mesh geometry and topology
-- `cylinder_facets.xdmf` / `cylinder_facets.h5` — boundary facet markers
-  (inflow, outflow, top/bottom, cylinder surface)
+```python
+from dolfin import Mesh
+mesh = Mesh("mesh/scengizci_refined.xml")
+```
 
-Boundary marker convention used by the solver:
+## Boundaries
 
-| Marker | Boundary | Treatment |
+The boundary portions are identified in the solver as follows:
+
+| Boundary | Location | Treatment |
 |---|---|---|
-| 1 | Inflow (x₁ = 0) | Strong Dirichlet, free-stream state |
-| 2 | Outflow (x₁ = 2) | Do-nothing (consistent Euler normal flux) |
-| 3 | Top / bottom (x₂ = 0, 1) | Do-nothing (consistent Euler normal flux) |
-| 4 | Cylinder surface | Penalty-free weak slip (u·n = 0) |
+| Inflow | x₁ = 0 | Strong Dirichlet, free-stream state |
+| Outflow | x₁ = 2 | Do-nothing (consistent Euler normal flux) |
+| Top / bottom | x₂ = 0, x₂ = 1 | Do-nothing (consistent Euler normal flux) |
+| Cylinder surface | ‖x − (0.5, 0.5)‖ = 0.05 | Penalty-free weak slip (u·n = 0) |
+
+See `figures/mesh_full.png` and `figures/mesh_zoom.png` for visualizations.
