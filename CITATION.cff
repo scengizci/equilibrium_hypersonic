@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite the manuscript below.
+  A DOI and full bibliographic reference will be added upon publication.
+title: >-
+  PASSC: A physics-informed SUPG-stabilized finite element framework with
+  shock-capturing for simulating inviscid high-speed flows around a cylinder
+type: software
+authors:
+  - family-names: Cengizci
+    given-names: Süleyman
+    email: suleyman.cengizci@antalya.edu.tr
+    affiliation: >-
+      Department of Computer Technologies, Antalya Bilim University,
+      Antalya 07190, Turkey
+  - family-names: Uğur
+    given-names: Ömür
+    email: ougur@metu.edu.tr
+    affiliation: >-
+      Institute of Applied Mathematics, Middle East Technical University,
+      Ankara 06800, Turkey
+repository-code: 'https://github.com/scengizci/equilibrium_hypersonic'
+license: MIT
+keywords:
+  - physics-informed neural networks
+  - finite element method
+  - SUPG
+  - YZ-beta shock-capturing
+  - compressible Euler equations
+  - hypersonic flow
+preferred-citation:
+  type: article
+  title: >-
+    A physics-informed SUPG-stabilized finite element framework with
+    shock-capturing for simulating inviscid high-speed flows around a cylinder
+  authors:
+    - family-names: Cengizci
+      given-names: Süleyman
+    - family-names: Uğur
+      given-names: Ömür
+  journal: Journal of Computational Physics
+  year: 2026
+  notes: Submitted.

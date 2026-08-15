@@ -1,0 +1,38 @@
+% Computational domain of the cylinder problem (Figure 1 of the manuscript).
+% Compile with: pdflatex domain.tex
+\documentclass[tikz,border=8pt]{standalone}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc}
+\begin{document}
+\begin{tikzpicture}[scale=0.82]
+	\draw[thick,-] (-8,0) -> (-8,6);
+	\draw[thick,-] (-8,6) -> (4,6);
+	\draw[thick,-] (4,6) -> (4,0);
+	\draw[thick,-] (4,0) -> (-8,0);
+	\draw[thick,->] (-8,0) -> (-7,0);
+	\draw[thick,->] (-8,1) -> (-7,1);
+	\draw[thick,->] (-8,2) -> (-7,2);
+	\draw[thick,->] (-8,3) -> (-7,3);
+	\draw[thick,->] (-8,4) -> (-7,4);
+	\draw[thick,->] (-8,5) -> (-7,5);
+	\draw[thick,->] (-8,6) -> (-7,6);
+	\draw[thick,->] (-8,6) -> (-8,7.0); % y-component
+	\draw[thick,->] (4,0) -> (5.0,0); % x-component
+	\node[left, above] at (-8.5,7) {$x_{2}$};
+	\node[right] at (5,-0.5) {$x_{1}$};
+	\node[right] at (-7,4.5) {$\mathbf{u}_{\infty}$};
+	\draw[red, thick,-](-5,3) circle (0.25);
+	\node[left, right=-1cm] at (-8,6) {$1.0$};
+	\node[left, right=-1cm] at (-8,0) {$0.0$};
+	\node[left, below=0cm] at (-8,0) {$0.0$};
+	\node[left, right=-1cm] at (-8,3) {$0.5$};
+	\node[right, right=0.2cm] at (-4,3) {$0.1$};
+	\draw[dashed] (-8,3) -> (-5,3);
+	\draw[thick,-, blue] (-4.7,3.25) -> (-4,3.25);
+	\draw[thick,-, blue] (-4.7,2.75) -> (-4,2.75);
+	\draw[thick,<->, green] (-4,2.79) -> (-4,3.21);
+	\draw[dashed] (-8,3) -> (-5,3);
+	\draw[dashed] (-5,3) -> (-5,0);
+	\node[below=2mm] at (-5,0) {$0.5$};
+	\node[below=2mm] at (4,0) {$2.0$};
+\end{tikzpicture}
+\end{document}
