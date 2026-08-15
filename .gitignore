@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+ 
+# PyTorch checkpoints / large training artifacts
+*.pt
+*.pth
+runs/
+checkpoints/
+ 
+# FEniCS / simulation outputs
+*.h5
+*.xdmf
+*.pvd
+*.vtu
+*.vtk
+jitfailure-*
+.cache/
+ 
+# Large raw snapshot data (keep configs + scripts, not bulk output)
+snapshots/
+output/
+results_raw/
+ 
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.toc
+ 
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+ 
+# Keep the computational mesh under version control
+!mesh/*.h5
+!mesh/*.xdmf
